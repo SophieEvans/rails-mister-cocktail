@@ -24,7 +24,7 @@ ingredients = JSON.parse(html_file)
   puts "#{c} created"
   Cocktail.create(name: "Lucky Sevans")
   Cocktail.create(name: "Bramble 409")
-  Cocktail.create(name: "Le Wagon Beach Tea")
+  Cocktail.create(name: "Le Wagon Iced Tea")
   Cocktail.create(name: "Batch Breeze")
   Cocktail.create(name: "Paillard Collins")
 
