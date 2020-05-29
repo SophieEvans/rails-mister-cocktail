@@ -1,4 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <h1>Mister Cocktail</h1>
   <%= link_to "#", class: "navbar-brand" do %>
     <%= image_tag "" %>
   <% end %>
@@ -6,8 +7,6 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -20,7 +19,7 @@
 <div class="cards">
    <% @cocktails.each do |cocktail| %>
     <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <%= cl_image_tag cocktail.photo.key, width: 400, height: 300, crop: :fill %>
       <div class="card-trip-infos">
         <h2><%= link_to "#{cocktail.name}", cocktail_path(cocktail) %></h2>
         <p>Cocktail description.</p>
