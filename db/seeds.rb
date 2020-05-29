@@ -9,9 +9,7 @@ require 'faker'
 require 'open-uri'
 require 'nokogiri'
 
-puts 'Cleaning database...'
-Cocktail.destroy_all
-
+Puts "creating entries...""
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 html_file = open(url).read
 ingredients = JSON.parse(html_file)
