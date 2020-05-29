@@ -9,6 +9,8 @@ require 'faker'
 require 'open-uri'
 require 'nokogiri'
 
+Cocktail.destroy_all
+
 puts "creating entries..."
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 html_file = open(url).read
@@ -17,8 +19,5 @@ ingredients = JSON.parse(html_file)
     i = Ingredient.create(name: d["strIngredient1"])
     puts "created... #{i.name}"
   end
-
-  c = Cocktail.create(name: "Lucky Sevans")
-  puts "#{c} created"
 
 puts 'Finished!'
