@@ -9,7 +9,7 @@ require 'faker'
 require 'open-uri'
 require 'nokogiri'
 
-Puts "creating entries...""
+puts "creating entries..."
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 html_file = open(url).read
 ingredients = JSON.parse(html_file)
@@ -18,12 +18,7 @@ ingredients = JSON.parse(html_file)
     puts "created... #{i.name}"
   end
 
-  c = Cocktail.create(name: "Coderinha")
+  c = Cocktail.create(name: "Lucky Sevans")
   puts "#{c} created"
-  Cocktail.create(name: "Lucky Sevans")
-  Cocktail.create(name: "Bramble 409")
-  Cocktail.create(name: "Le Wagon Iced Tea")
-  Cocktail.create(name: "Batch Breeze")
-  Cocktail.create(name: "Paillard Collins")
 
 puts 'Finished!'
